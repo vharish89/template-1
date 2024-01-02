@@ -20,4 +20,4 @@ jobs:
           ssh-keyscan 20.219.104.180 > ~/.ssh/known_hosts
   
       - name: Run Ansible on Remote Server
-        run: ssh kingpin@20.219.104.180 -p 'KingSpin.009900' 'ansible-playbook /home/kingpin/rgcreate.yml'
+        run: ssh kingpin@20.219.104.180 'ansible-playbook /home/kingpin/rgcreate.yml'
