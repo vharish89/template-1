@@ -12,5 +12,5 @@ jobs:
       run: |
         curl -X POST -H "Authorization: token ${{ secrets.GH_ReUse }}" \
         -H "Accept: application/vnd.github.v3+json" \
-        https://api.github.com/orgs/your-org-name/repos \
+        https://api.github.com/orgs/vharish89-org/repos \
         -d '{"name":"${{ github.event.client_payload.name }}", "private": ${{ github.event.client_payload.private }}}'
