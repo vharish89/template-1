@@ -1,0 +1,16 @@
+name: Listen and Create Repository
+
+on:
+  repository_dispatch:
+    types: [create-repo]
+
+jobs:
+  create_repo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create new repository
+      run: |
+        curl -X POST -H "Authorization: token ${{ secrets.GH_ReUse }}" \
+        -H "Accept: application/vnd.github.v3+json" \
+        https://api.github.com/orgs/your-org-name/repos \
+        -d '{"name":"${{ github.event.client_payload.name }}", "private": ${{ github.event.client_payload.private }}}'
