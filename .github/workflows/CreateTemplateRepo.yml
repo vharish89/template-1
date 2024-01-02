@@ -18,7 +18,7 @@ jobs:
     - name: Create Repository from Template
       uses: peter-evans/repository-dispatch@v1
       with:
-        token: ${{ secrets.GH_PAT }}
+        token: ${{ secrets.GH_ReUse }}
         repository: your-username/template-repository
         event-type: create-repo
         client-payload: '{"name": "${{ github.event.inputs.new_repo_name }}", "private": ${{ github.event.inputs.is_private }}}'
