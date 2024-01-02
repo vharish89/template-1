@@ -8,7 +8,7 @@ on:
         required: true
       is_private:
         description: 'Should the new repo be private?'
-        required: true
+        required: false
         default: 'true'
 
 jobs:
