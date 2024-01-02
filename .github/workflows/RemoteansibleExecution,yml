@@ -17,7 +17,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC53aeCO7uWTx5NJsKwKs8ilJ88f4oZDBOxdmEkqwffDPK35xBdVsUY+h5p0g9p3ChYzfEsp0r1ouRo77e9vhZNmj39cwwsxubpDrcyTLcLUpYrRde0cFf9eSkzrrJc2ntzkQ72FY4D+RDexrLnWJmZVPvC5n9EHgt2U9tnN/HMNa9Ays0UkskmPzc9hQDoQyjJqNrLs+h7vP2S5soBwRvO5X9dvv/cGH3E/ay5B4gi4bVwDrQeI0Jz+z0o+Q1biquF0S91uar4Gp2RT3HB8lBXiHYqlNStUPnG9FBhXh+i3aL5i54A/0/+N4Gk6XzV1wCW6xjVVq5Chb8e8NEQSbevZuC4PGWtnpg5HWpSAy9KeZIo+XVUb6cYIPREy99NPUzp3nwNeKehlsgWA0bOphukBx3SR6uwN13qIrnzuhrewr+HgujmZPaNMf3fIaEAR7RGMg+AEoeXbYKgxzcuXb3Iw4wA+m3ggPMsWXhYDphzYGSCwEzpovoT/N1Jk+EXkH8=" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan ansible01 > ~/.ssh/known_hosts
+          ssh-keyscan 20.219.104.180 > ~/.ssh/known_hosts
   
       - name: Run Ansible on Remote Server
-        run: ssh kingpin@ansible01 -p 'KingSpin.009900' 'ansible-playbook /home/kingpin/rgcreate.yml'
+        run: ssh kingpin@20.219.104.180 -p 'KingSpin.009900' 'ansible-playbook /home/kingpin/rgcreate.yml'
